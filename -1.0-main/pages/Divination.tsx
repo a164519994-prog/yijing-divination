@@ -12,7 +12,7 @@ async function callDifyProxy(hex: Hexagram, topic: string, query: string): Promi
   try {
     console.log(`[AI] Calling Dify Proxy...`);
 
-    const response = await fetch('/api/dify', {
+    const response = await fetch('https://yijing-divination-omega.vercel.app/api/dify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
