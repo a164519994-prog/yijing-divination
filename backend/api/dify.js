@@ -1,3 +1,9 @@
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};
+
 const HEXAGRAMS = [
   { id: 1, name: "乾", pinyin: "qián", english: "The Creative", judgment: "元亨利贞", tag: "上吉" },
   { id: 2, name: "坤", pinyin: "kūn", english: "The Receptive", judgment: "元亨利牝马之贞", tag: "吉" },
@@ -65,78 +71,38 @@ const HEXAGRAMS = [
   { id: 64, name: "未济", pinyin: "wèi jì", english: "Before Completion", judgment: "亨，小狐汔济，濡其尾，无攸利", tag: "平" }
 ];
 
-const TOPIC_MAP = {
-  'career': '事业',
-  'health': '健康',
-  'wealth': '财运',
-  'relationships': '姻缘'
-};
-
-const QUOTES = [
-  "天行健，君子以自强不息。",
-  "地势坤，君子以厚德载物。",
-  "居上位而不骄，在下位而不忧。",
-  "穷则变，变则通，通则久。",
-  "君子藏器于身，待时而动。",
-  "知几其神乎！君子上交不谄，下交不渎。",
-  "满招损，谦受益。",
-  "日中则昃，月盈则食。",
-  "尺蠖之屈，以求信也；龙蛇之蛰，以存身也。",
-  "善不积不足以成名，恶不积不足以灭身。",
-  "见善则迁，有过则改。",
-  "君子敬以直内，义以方外。",
-  "二人同心，其利断金。",
-  "无平不陂，无往不复。",
-  "君子以遏恶扬善，顺天休命。",
-  "君子以虚受人。",
-  "君子以独立不惧，遁世无闷。",
-  "君子以恐惧修省。",
-  "君子以顺德，积小以高大。",
-  "时止则止，时行则行，动静不失其时，其道光明。"
-];
-
+const TOPIC_MAP = { 'career': '事业', 'health': '健康', 'wealth': '财运', 'relationships': '姻缘' };
+const QUOTES = ["天行健，君子以自强不息。", "地势坤，君子以厚德载物。", "穷则变，变则通，通则久。", "君子藏器于身，待时而动。", "满招损，谦受益。", "见善则迁，有过则改。", "二人同心，其利断金。", "时止则止，时行则行，动静不失其时，其道光明。"];
 const CONCEPTS = [
   { title: "变易与不易", desc: "万物皆变，唯变不变。此卦提示你在变动中寻找恒定的规律。" },
   { title: "阴阳消长", desc: "盛极必衰，否极泰来。理解当前所处的阴阳阶段至关重要。" },
   { title: "时位之义", desc: "得时者昌，失时者亡。行动的快慢需与时机契合。" },
-  { title: "中正之道", desc: "过犹不及，不偏不倚。保持内心的平衡是解决问题的关键。" },
-  { title: "积善成德", desc: "勿以善小而不为，勿以恶小而为之。积小善而成大德。" },
-  { title: "诚信为本", desc: "人无信不立，业无信不兴。诚信是一切事业的基础。" },
-  { title: "顺势而为", desc: "顺天者昌，逆天者亡。顺应自然规律才能事半功倍。" },
-  { title: "知足常乐", desc: "知足者富，强行者有志。懂得满足才能获得真正的快乐。" }
+  { title: "中正之道", desc: "过犹不及，不偏不倚。保持内心的平衡是解决问题的关键。" }
 ];
-
 const KEYWORDS = {
-  'career': ['机遇', '挑战', '成长', '领导力', '团队', '决策', '创新'],
-  'health': ['平衡', '调理', '修养', '心态', '锻炼', '饮食', '作息'],
-  'wealth': ['积累', '投资', '风险', '机遇', '节俭', '慷慨', '智慧'],
-  'relationships': ['沟通', '理解', '信任', '包容', '珍惜', '缘分', '成长']
+  'career': ['机遇', '挑战', '成长', '领导力', '决策', '创新'],
+  'health': ['平衡', '调理', '修养', '心态', '锻炼', '作息'],
+  'wealth': ['积累', '投资', '风险', '机遇', '智慧'],
+  'relationships': ['沟通', '理解', '信任', '包容', '缘分']
 };
 
 function generateResponse(hex, topic, query) {
   const topicName = TOPIC_MAP[topic] || topic;
   const topicKeywords = KEYWORDS[topic] || KEYWORDS['career'];
-  
   const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
-  
   const keywords = [];
   while (keywords.length < 4) {
     const keyword = topicKeywords[Math.floor(Math.random() * topicKeywords.length)];
-    if (!keywords.includes(keyword)) {
-      keywords.push(keyword);
-    }
+    if (!keywords.includes(keyword)) keywords.push(keyword);
   }
-  
   const concept = CONCEPTS[Math.floor(Math.random() * CONCEPTS.length)];
-  
-  const detailed = `卦象${hex.name}${hex.tag === '上吉' ? '大吉大利' : hex.tag === '吉' ? '吉祥如意' : hex.tag === '平' ? '平稳发展' : '需谨慎应对'}，${topicName}方面${query ? `针对"${query}"` : ''}，建议你${Math.random() > 0.5 ? '积极进取' : '稳扎稳打'}，${Math.random() > 0.5 ? '把握机遇' : '防范风险'}，${Math.random() > 0.5 ? '与人为善' : '自我提升'}，${Math.random() > 0.5 ? '顺应时势' : '坚持信念'}。`;
-  
+  const detailed = `卦象${hex.name}${hex.tag === '上吉' ? '大吉大利' : hex.tag === '吉' ? '吉祥如意' : hex.tag === '平' ? '平稳发展' : '需谨慎应对'}，${topicName}方面${query ? `针对"${query}"` : ''}，建议你积极进取，把握机遇，与人为善，顺应时势。`;
   return { quote, keywords, concept, detailed };
 }
 
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
   if (req.method === 'OPTIONS') {
@@ -144,29 +110,21 @@ export default function handler(req, res) {
     return;
   }
   
-  if (req.method === 'GET') {
-    res.status(200).json({ status: 'ok', message: '后端服务运行正常' });
-    return;
-  }
-  
   if (req.method === 'POST') {
     const { query, hexagram, topic } = req.body;
-    
     if (!hexagram || !topic) {
       res.status(400).json({ error: '缺少必要参数' });
       return;
     }
-
     const hex = HEXAGRAMS.find(h => h.id === hexagram.id);
     if (!hex) {
       res.status(400).json({ error: '卦象不存在' });
       return;
     }
-
     const response = generateResponse(hex, topic, query);
     res.status(200).json(response);
     return;
   }
   
-  res.status(404).json({ error: '接口不存在' });
+  res.status(405).json({ error: 'Method not allowed' });
 }
