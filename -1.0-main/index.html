@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>I Ching Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700;900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "royal-blue": "#1132d4",
+              "cinnabar": "#c43636",
+              "gold": "#d4af37",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101322",
+              "ink": "#111218",
+              "parchment": "#fcfaf5",
+            },
+            fontFamily: {
+              "display": ['"Noto Serif SC"', '"Noto Serif"', "serif"],
+              "sans": ['"Noto Sans"', "sans-serif"],
+            },
+            backgroundImage: {
+              'paper-texture': "url('https://www.transparenttextures.com/patterns/rice-paper-2.png')",
+              'ink-wash': "linear-gradient(to bottom, rgba(252, 250, 245, 0.5), rgba(246, 246, 248, 1)), url('https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=800&q=80')",
+            },
+            animation: {
+              'spin-slow': 'spin 20s linear infinite',
+              'spin-very-slow': 'spin 60s linear infinite',
+              'ink-spread': 'inkSpread 4s ease-out infinite',
+              'breathe': 'breathe 6s ease-in-out infinite',
+            },
+            keyframes: {
+              breathe: {
+                '0%, 100%': { opacity: '0.7' },
+                '50%': { opacity: '1' },
+              },
+              inkSpread: {
+                '0%': { transform: 'scale(0.2)', opacity: '0.8', filter: 'blur(10px)' },
+                '50%': { opacity: '0.5' },
+                '100%': { transform: 'scale(3)', opacity: '0', filter: 'blur(50px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #fcfaf5; /* Parchment fallback */
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+      }
+      .writing-vertical {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 0.2em;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      
+      /* Masking Utilities for Seamless Blending */
+      .mask-gradient-to-b {
+        -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      }
+      .mask-gradient-to-t {
+        -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+        mask-image: linear-gradient(to top, black 40%, transparent 100%);
+      }
+      .mask-radial-fading {
+         -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+         mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

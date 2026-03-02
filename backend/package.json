@@ -1,0 +1,12 @@
+{
+  "name": "yijing-backend",
+  "version": "1.0.0",
+  "description": "易境后端服务",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
