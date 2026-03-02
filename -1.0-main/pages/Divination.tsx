@@ -460,7 +460,7 @@ export const Divination: React.FC = () => {
                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10 transition-transform duration-700 ease-out group-hover:scale-[1.02] bg-stone-200">
                       <div 
                         className="absolute inset-0 bg-cover bg-center opacity-90 dark:opacity-80 transition-transform duration-[60s] ease-linear group-hover:scale-110"
-                        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdnTkAFTkAz2pDoadHIRDih45Q7pVY3BCeipBOmDAZFVQmFQBYJIiq2tFRG8OE97xIjSF5JejzV_ZxiwHc1_lJ7w_RRFrQx5M6zqHnyMGFHCz7n11hKJNvLA3fpRziKOSR7UPTpkMj2jPsYAe9V6J2Ue8RNu4rdMVTnvRgDIeLpUd_Rnki3iwU4l6-QYzb8MyvuN2UPhZDghjVYXP77KeZA8wCSfPYBre3cN60BdtNeDeCpbwqu5BEZQxQafsxn1IpP-0HyjAN_m5D')" }}
+                        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=400&q=80')" }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-tr from-stone-200/20 via-transparent to-stone-900/10 mix-blend-overlay"></div>
                       </div>

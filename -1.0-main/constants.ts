@@ -26,7 +26,7 @@ export const HEXAGRAMS: Hexagram[] = [
       "九五：飞龙在天，利见大人。 (Flying dragon in the heavens. It furthers one to see the great man.)",
       "上九：亢龙有悔。 (Arrogant dragon will have cause to repent.)"
     ],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdnTkAFTkAz2pDoadHIRDih45Q7pVY3BCeipBOmDAZFVQmFQBYJIiq2tFRG8OE97xIjSF5JejzV_ZxiwHc1_lJ7w_RRFrQx5M6zqHnyMGFHCz7n11hKJNvLA3fpRziKOSR7UPTpkMj2jPsYAe9V6J2Ue8RNu4rdMVTnvRgDIeLpUd_Rnki3iwU4l6-QYzb8MyvuN2UPhZDghjVYXP77KeZA8wCSfPYBre3cN60BdtNeDeCpbwqu5BEZQxQafsxn1IpP-0HyjAN_m5D"
+    image: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=400&q=80"
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const HEXAGRAMS: Hexagram[] = [
       "六五：黄裳，元吉。",
       "上六：龙战于野，其血玄黄。"
     ],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDrLrriGJfMuCLxrEkmy4CSc16iCnug50jxo2j0wD9Bvz7VIDGWOUFinpvzcbKBQiItFfA5O3CL3Hg8h2LVpKJwKhPR8E5nTOiiXPfHKAOMyDXtgZ9bin8B5_YfyfsDOfmvprjmEkRQzine30YR7CIDwRPucwdXfhISNSC9M5_VMbvndq2bfeIO-AbUy67G0iteE7ewbEY4JJaZpJfLSb7jI949AqRYMID1cgtyLVRkMFHxXfTpJ79x_Wj_AZG9X_1xjE5w1-cE543P"
+    image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&q=80"
   },
   {
     id: 3,
@@ -695,4 +695,4 @@ export const DIVINATION_TOPICS = [
   }
 ];
 
-export const BACKGROUND_TEXTURE = "https://lh3.googleusercontent.com/aida-public/AB6AXuDrLrriGJfMuCLxrEkmy4CSc16iCnug50jxo2j0wD9Bvz7VIDGWOUFinpvzcbKBQiItFfA5O3CL3Hg8h2LVpKJwKhPR8E5nTOiiXPfHKAOMyDXtgZ9bin8B5_YfyfsDOfmvprjmEkRQzine30YR7CIDwRPucwdXfhISNSC9M5_VMbvndq2bfeIO-AbUy67G0iteE7ewbEY4JJaZpJfLSb7jI949AqRYMID1cgtyLVRkMFHxXfTpJ79x_Wj_AZG9X_1xjE5w1-cE543P";
+export const BACKGROUND_TEXTURE = "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=800&q=80";
